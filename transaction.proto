@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+service Transaction {
+    rpc newTransaction(TransactionRequest) returns (TransactionResponse) {}
+}
+
+message TransactionRequest {
+    string phone_number = 1;
+    string customer_number = 2;
+    int32 amount = 3;
+}
+
+message TransactionResponse {
+    string status = 1;
+    string biller_message = 2;
+    string created_at = 3;
+    string update_at = 4; 
+}
